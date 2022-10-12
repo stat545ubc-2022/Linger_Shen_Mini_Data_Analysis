@@ -686,7 +686,8 @@ head(select(vancouver_trees_time, c("date_planted", "year", "month")))
     ## 5 1993-12-17   1993  1993-12-01
     ## 6 1993-12-16   1993  1993-12-01
 
-##### Summarizing: Compute the number of observations for at least one of your categorical variables.
+**Summarizing: Compute the number of observations for at least one of
+your categorical variables.**
 
 ``` r
 vancouver_trees_month_count <- vancouver_trees_time %>% 
@@ -719,7 +720,8 @@ of observations for time variable. And I noticed that it seems like
 there is a cyclic trend of the tree planted count (the number goes up
 and down) , which we might explore more when we plot the chart.
 
-##### Graphing: Create a graph out of summarized variables that has at least two geom layers.
+**Graphing: Create a graph out of summarized variables that has at least
+two geom layers.**
 
 ``` r
 vancouver_trees_month_count_plot <- vancouver_trees_time %>% 
@@ -739,11 +741,13 @@ From the graph above, we noticed that there is a cyclic pattern of the
 tree planted count by month. And 1 cycle is roughly 1 year.
 Specifically, the month with larger tree planted count coincides with
 springtime (March to May). While during the winter month (Nov. to Feb.),
-people tends to plant less. This findings conform to our common sense.
+people tends to plant less. This findings conforms to our common sense.
 
 #### Research Question 2. What’s the relationship between the year/month we planted the trees and its tree’s height? Is there any trend by time?
 
-##### Summarizing: Compute the *range*, *mean*, and *two other summary statistics* of **one numerical variable** across the groups of **one categorical variable** from your data.
+**Summarizing: Compute the *range*, *mean*, and *two other summary
+statistics* of one numerical variable across the groups of one
+categorical variable from your data.**
 
 *height_range_id* is an integer variable, with its definition of 0-10
 for every 10 feet (e.g., 0 = 0-10 ft). So it’s more like a catergorical
@@ -774,7 +778,9 @@ head(vancouver_trees_year_height, n = 40)
 
 we noticed that, the average of tree’s height decreases year by year
 
-##### Graphing: Create a graph of your choosing, make one of the axes logarithmic, and format the axes labels so that they are “pretty” or easier to read.
+**Graphing: Create a graph of your choosing, make one of the axes
+logarithmic, and format the axes labels so that they are “pretty” or
+easier to read.**
 
 First, I transformed the data type of *year* and *height_range_id*, to
 make plotting easier
@@ -812,13 +818,14 @@ print(vancouver_trees_time_height_plot)
 ![](mini-project-1_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 From the plot, we can determine that the tree’s count of some smaller
-*height_range_id*, such as 0, 1 increases, and the larger ones, such as
-2 - 6 decreases over the year. So, we can concludes that, people tend to
-plant shorter tree in the recent 10 years.
+*height_range_id*, such as 0, 1 increase, and the larger ones, such as
+2 - 6 decrease over the year. So, we can concludes that, people tend to
+plant shorter trees in the recent 10 years.
 
 #### Research Question 3. What’s the relationship between the neighbourhood and its tree’s size (height and diameter)? Is there any pattern, such as some neighbourhood prefer planting bigger or taller trees?
 
-##### Summarizing: Create a categorical variable with 3 or more groups from an existing numerical variable.
+**Summarizing: Create a categorical variable with 3 or more groups from
+an existing numerical variable.**
 
 Since height has been transformed to categorical variable, we can also
 transform diameter, so that height and diameter are in the same range.
@@ -840,7 +847,7 @@ head(vancouver_trees_diameter$diameter_level)
 
 To evaluate the relationship between *neighbourhood_name* and tree’s
 size, I calculated the **mean** of both *height_range_id* and
-*diameter_level* across \*\*neighbourhood_name\*.
+*diameter_level* across *neighbourhood_name*.
 
 ``` r
 vancouver_trees_geo_size <- vancouver_trees_diameter %>%
@@ -864,7 +871,8 @@ print(vancouver_trees_geo_size)
     ## 10 KITSILANO                           3.26           3.30
     ## # … with 12 more rows
 
-##### Graphing: Create a graph out of summarized variables that has at least two geom layers.
+**Graphing: Create a graph out of summarized variables that has at least
+two geom layers.**
 
 To plot the *height_range_id* and *diameter_level* side by side for
 easier comparison, I used pivot_longer() to make the data “tidier”.
@@ -900,10 +908,11 @@ vancouver_trees_geo_size_plot <- vancouver_trees_geo_size %>%
 print(vancouver_trees_geo_size_plot)
 ```
 
-![](mini-project-1_files/figure-gfm/unnamed-chunk-29-1.png)<!-- --> In
-general, we noticed that *height_range_id* and *diameter_level* seems to
-have a linear relationship, when the trees is taller, the diameter is
-greater, which makes sense. And combining with *neighbourhood_name*. We
+![](mini-project-1_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
+
+In general, we noticed that *height_range_id* and *diameter_level* seems
+to have a linear relationship, when the trees is taller, the diameter is
+greater, which makes sense. And combining with *neighbourhood_name*, We
 can conclude that the neighbourhood with taller and bigger trees are
 
 1)  West Point Grey
@@ -920,9 +929,11 @@ They are mostly located in West Vancouver.
 
 #### Research Question 4. What’s the possible factor that contributes to the **curb** variable?
 
-##### Summarizing: Compute the *range*, *mean*, and *two other summary statistics* of **one numerical variable** across the groups of **one categorical variable** from your data.
+**Summarizing: Compute the *range*, *mean*, and *two other summary
+statistics* of one numerical variable across the groups of one
+categorical variable from your data.**
 
-To explor the relationship between *curb* and *street_side_name*, I
+To explore the relationship between *curb* and *street_side_name*, I
 calculated **percentage** of *curb* value (“Y” or “N”) across
 *street_side_name*.
 
@@ -950,10 +961,11 @@ head(vancouver_trees_stree_side_curb_percent)
 We can notice that for Greenway, the trees 100% don’t have curb, while
 for others type of street_side, the trees mostly have curb.
 Specifically, for Bike Road, the trees 100% have curb. It makes sense
-that for normal street, the trees should come with curb, while for
+that for normal streets, the trees should come with curb, while for
 Greenway the trees don’t necessarily have ones.
 
-##### Graphing: Create a graph out of summarized variables that has at least two geom layers.
+**Graphing: Create a graph out of summarized variables that has at least
+two geom layers.**
 
 To plot the *street_side_name* and *curb_percentage* in stack for easier
 comparison, I used pivot_longer() to make the data “tidier”.
@@ -1019,14 +1031,14 @@ We noticed from the graph that there is a cyclic pattern of the tree
 planted count by month. And 1 cycle is roughly 1 year. Specifically, the
 month with larger tree planted count coincides with springtime (March to
 May). While during the winter month (Nov. to Feb.), people tends to
-plant less. This finding conform to our common sense.
+plant less. This finding conforms to our common sense.
 
 #### Reseach Question 2. What’s the relationship between the year/month we planted the trees and its tree’s height? Is there any trend by time?
 
 We can determine from the summary and plot that, the tree’s count of
-some smaller *height_range_id*, such as 0, 1 increases, and the larger
-ones, such as 2 - 6 decreases over the year. So, we can concludes that,
-people tend to plant shorter tree in the recent 10 years.
+some smaller *height_range_id*, such as 0, 1 increase, and the larger
+ones, such as 2 - 6 decrease over the year. So, we can concludes that,
+people tend to plant shorter trees in the recent 10 years.
 
 #### Reseach Question 3. What’s the relationship between the neighbourhood and its tree’s size (height and diameter)? Is there any pattern, such as some neighbourhood prefer planting bigger or taller trees?
 
@@ -1052,8 +1064,9 @@ They are mostly located in West Vancouver.
 We can learn from the graph that, for Greenway, the trees 100% don’t
 have curb, while for others type of street_side, the trees mostly have
 curb. Specifically, for Bike Road, the trees 100% have curb. It makes
-sense that for normal street, the trees should come with curb, while for
-Greenway the trees don’t necessarily have ones.
+sense that for normal streets, the trees should come with curb, while
+for Greenway the trees don’t necessarily have ones.That’s the only
+meaningful relationship that I find for explaining *curb* variable.
 
 <!----------------------------------------------------------------------------->
 
