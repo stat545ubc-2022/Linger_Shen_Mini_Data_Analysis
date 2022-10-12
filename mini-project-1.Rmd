@@ -196,9 +196,10 @@ If we rewind and go back to the learning objectives, you'll see that by the end 
 
 <!-------------------------- Start your work below ---------------------------->
 **Question 1.  Plot the distribution of a numeric variable.**
-The only numeric variable in this data set is **diameter** and **height_range_id**
 
-Distribution of **diameter**
+The only numeric variable in this data set is *diameter* and *height_range_id*
+
+Distribution of *diameter*
 ```{r}
 answer2.1.1 <- vancouver_trees %>%
     ggplot(aes(diameter)) +
@@ -208,7 +209,7 @@ print(answer2.1.1)
 
 As we can see, the *diameter* ranges [0, 400], with most of its value are within [0, 50]
 
-Distribution of **height_range_id**
+Distribution of *height_range_id*
 ```{r}
 answer2.1.2 <- vancouver_trees %>%
     ggplot(aes(height_range_id)) +

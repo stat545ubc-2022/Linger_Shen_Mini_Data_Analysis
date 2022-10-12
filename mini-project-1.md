@@ -408,11 +408,12 @@ tasks may make sense for your data - which is why you should only answer
 
 <!-------------------------- Start your work below ---------------------------->
 
-**Question 1. Plot the distribution of a numeric variable.** The only
-numeric variable in this data set is **diameter** and
-**height_range_id**
+**Question 1. Plot the distribution of a numeric variable.**
 
-Distribution of **diameter**
+The only numeric variable in this data set is *diameter* and
+*height_range_id*
+
+Distribution of *diameter*
 
 ``` r
 answer2.1.1 <- vancouver_trees %>%
@@ -426,7 +427,7 @@ print(answer2.1.1)
 As we can see, the *diameter* ranges \[0, 400\], with most of its value
 are within \[0, 50\]
 
-Distribution of **height_range_id**
+Distribution of *height_range_id*
 
 ``` r
 answer2.1.2 <- vancouver_trees %>%
