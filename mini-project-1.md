@@ -408,7 +408,7 @@ tasks may make sense for your data - which is why you should only answer
 
 <!-------------------------- Start your work below ---------------------------->
 
-Question 1. Plot the distribution of a numeric variable. The only
+**Question 1. Plot the distribution of a numeric variable.** The only
 numeric variable in this data set is **diameter** and
 **height_range_id**
 
@@ -421,7 +421,7 @@ answer2.1.1 <- vancouver_trees %>%
 print(answer2.1.1)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 As we can see, the *diameter* ranges \[0, 400\], with most of its value
 are within \[0, 50\]
@@ -435,13 +435,13 @@ answer2.1.2 <- vancouver_trees %>%
 print(answer2.1.2)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 As we can see, the *height_range_id* ranges\[0, 10\]. The height group
 with most counts is group 1 and group 2.
 
-Question 3. Investigate how many missing values there are per variable.
-Can you find a way to plot this?
+**Question 3. Investigate how many missing values there are per
+variable. Can you find a way to plot this?**
 
 ``` r
 answer2.3.1 <- vancouver_trees  %>%
@@ -454,15 +454,15 @@ answer2.3.1 <- vancouver_trees  %>%
 print(answer2.3.1)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 As we notice here, only *longitude*, *latitude*, *date_planted* and
 *cultivar_name* have missing values. Specifically, for *date_planted*
 and *cultivar_name*, its missing value’s counts exceeds 50% of its total
 counts.
 
-Question 2. Create a new variable based on other variables in your data
-(only if it makes sense)
+**Question 2. Create a new variable based on other variables in your
+data (only if it makes sense)**
 
 Combining with some knowledge in forestry, I had an intuition that
 *genus_name*, *species_name* and *cultivar_name* could be concated
@@ -497,8 +497,8 @@ head(answer2.2.1)
 As you can see, the new column *genus_species* is after *genus_name* and
 *species_name* and before *cultivar_name*
 
-Question 7. Make a new tibble with a subset of your data, with variables
-and observations that you are interested in exploring.
+**Question 7. Make a new tibble with a subset of your data, with
+variables and observations that you are interested in exploring.**
 
 After exploring each column, I decided to drop
 *civic_number*,*std_street*, *longitude*, *latitude*. because for the
@@ -526,11 +526,11 @@ head(vancouver_trees_sub)
     ## #   names ¹​species_name, ²​genus_species, ³​cultivar_name, ⁴​common_name,
     ## #   ⁵​assigned, ⁶​root_barrier, ⁷​plant_area
 
-Question 4. Explore the relationship between 2 variables in a plot.
+**Question 4. Explore the relationship between 2 variables in a plot.**
 
-Question 6. Use a boxplot to look at the frequency of different
+**Question 6. Use a boxplot to look at the frequency of different
 observations within a single variable. You can do this for more than one
-variable if you wish!
+variable if you wish!**
 
 Combining question 4 and question 6 above, I created several boxplots as
 below to see relationship between variables.
@@ -543,7 +543,7 @@ answer2.6.1 <- ggplot(vancouver_trees_sub, aes(diameter, neighbourhood_name)) +
 print(answer2.6.1)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 **height_range_id** X **neighbourhood_name**
 
@@ -553,7 +553,7 @@ answer2.6.2 <- ggplot(vancouver_trees_sub, aes(height_range_id, neighbourhood_na
 print(answer2.6.2)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 **genus_name** X **diameter**
 
@@ -563,7 +563,7 @@ answer2.6.3 <- ggplot(vancouver_trees_sub, aes(diameter, genus_name)) +
 print(answer2.6.3)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 **genus_name** X **height_range_id**
 
@@ -573,7 +573,7 @@ answer2.6.4 <- ggplot(vancouver_trees_sub, aes(height_range_id, genus_name)) +
 print(answer2.6.4)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 As we can see above, **genus_name** as tree’s category is more relevant
 to tree’s size (diameter and height_range_id)
@@ -732,7 +732,7 @@ vancouver_trees_month_count_plot <- vancouver_trees_time %>%
 print(vancouver_trees_month_count_plot)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 The graph reflects the relationship between date and tree planted count.
 From the graph above, we noticed that there is a cyclic pattern of the
@@ -791,7 +791,7 @@ vancouver_trees_time_height_plot <- vancouver_trees_time %>%
 print(vancouver_trees_time_height_plot)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 The above graph describe the relationship between *year* and
 *planted_tree_count*, colored by *height_range_id*. Noticed that the
@@ -808,7 +808,7 @@ print(vancouver_trees_time_height_plot)
 
     ## Warning: Transformation introduced infinite values in continuous y-axis
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 From the plot, we can determine that the tree’s count of some smaller
 *height_range_id*, such as 0, 1 increases, and the larger ones, such as
@@ -899,7 +899,7 @@ vancouver_trees_geo_size_plot <- vancouver_trees_geo_size %>%
 print(vancouver_trees_geo_size_plot)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-29-1.png)<!-- --> In
+![](mini-project-1_files/figure-gfm/unnamed-chunk-29-1.png)<!-- --> In
 general, we noticed that *height_range_id* and *diameter_level* seems to
 have a linear relationship, when the trees is taller, the diameter is
 greater, which makes sense. And combining with *neighbourhood_name*. We
@@ -992,7 +992,7 @@ vancouver_trees_stree_side_curb_percent_plot <- vancouver_trees_sub %>%
 print(vancouver_trees_stree_side_curb_percent_plot)
 ```
 
-![](mini-porject-1_files/figure-gfm/unnamed-chunk-32-1.png)<!-- -->
+![](mini-project-1_files/figure-gfm/unnamed-chunk-32-1.png)<!-- -->
 
 The graph perfectly illustrated our reasoning above in Summarize
 Section.

@@ -195,7 +195,7 @@ If we rewind and go back to the learning objectives, you'll see that by the end 
 8.  Use a density plot to explore any of your variables (that are suitable for this type of plot).
 
 <!-------------------------- Start your work below ---------------------------->
-Question 1.  Plot the distribution of a numeric variable.
+**Question 1.  Plot the distribution of a numeric variable.**
 The only numeric variable in this data set is **diameter** and **height_range_id**
 
 Distribution of **diameter**
@@ -218,7 +218,7 @@ print(answer2.1.2)
 
 As we can see, the *height_range_id* ranges[0, 10]. The height group with most counts is group 1 and group 2. 
 
-Question 3.  Investigate how many missing values there are per variable. Can you find a way to plot this?
+**Question 3.  Investigate how many missing values there are per variable. Can you find a way to plot this?**
 ```{r}
 answer2.3.1 <- vancouver_trees  %>%
     summarise_all(list(~is.na(.))) %>%
@@ -232,7 +232,7 @@ print(answer2.3.1)
 
 As we notice here, only *longitude*, *latitude*, *date_planted* and *cultivar_name* have missing values. Specifically, for *date_planted* and *cultivar_name*, its missing value's counts exceeds 50% of its total counts. 
 
-Question 2.  Create a new variable based on other variables in your data (only if it makes sense)
+**Question 2.  Create a new variable based on other variables in your data (only if it makes sense)**
 
 Combining with some knowledge in forestry, I had an intuition that *genus_name*, *species_name* and *cultivar_name* could be concated together to form a variable to distinguish tree's category. However, through the misssing values analysis above, we know that *cultivar_name*'s missing value counts exceeds 50%. So, I decided to concate only *genus_name* and *species_name*.
 
@@ -245,7 +245,7 @@ head(answer2.2.1)
 
 As you can see, the new column *genus_species* is after *genus_name* and *species_name* and before *cultivar_name*
 
-Question 7.  Make a new tibble with a subset of your data, with variables and observations that you are interested in exploring.
+**Question 7.  Make a new tibble with a subset of your data, with variables and observations that you are interested in exploring.**
 
 After exploring each column, I decided to drop *civic_number*,*std_street*, *longitude*,	*latitude*. because for the geo info, we have *neighbourhood_name*, *on_street* etc to determine its actual physical location.
 
@@ -255,9 +255,9 @@ vancouver_trees_sub <- answer2.2.1 %>%
 head(vancouver_trees_sub)
 ```
 
-Question 4.  Explore the relationship between 2 variables in a plot.
+**Question 4.  Explore the relationship between 2 variables in a plot.**
 
-Question 6.  Use a boxplot to look at the frequency of different observations within a single variable. You can do this for more than one variable if you wish!
+**Question 6.  Use a boxplot to look at the frequency of different observations within a single variable. You can do this for more than one variable if you wish!**
 
 Combining question 4 and question 6 above, I created several boxplots as below to see relationship between variables.
 
