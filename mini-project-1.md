@@ -802,7 +802,8 @@ of smaller values. So I decided to apply log to *count*
 vancouver_trees_time_height_plot <- vancouver_trees_time %>% 
     ggplot(aes(x = year)) + 
     geom_line(aes(color = height_range_id),stat="bin",binwidth=1) +
-    scale_y_continuous(trans='log2')
+    scale_y_continuous(trans='log2') +
+    ylab("log(count)")
 print(vancouver_trees_time_height_plot)
 ```
 
