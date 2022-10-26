@@ -15,22 +15,22 @@ This is the repo for STAT545A Mini Data Analysis, which aims to explore **Vancou
 ```
 .
 ├── MileStone1               # Directory for milestone 1, including exploring, summarizing and plotting
-		├── mini-project-1.Rmd   # Rmd file for milestone 1
-		├── mini-project-1.md    # Knitted md file for milestone 1
-		├── mini-project-1_files # output plots of each code chunk
-				├── figure-gfm
-        	├── XXX.png
-          ....
+│   ├── mini-project-1.Rmd   # Rmd file for milestone 1
+│   ├── mini-project-1.md    # Knitted md file for milestone 1
+│   ├── mini-project-1_files # output plots of each code chunk
+│   │   ├── figure-gfm
+│   │   │   ├── XXX.png
+          			....
 ├── MileStone2               # Directory for milestone 2, including special data types, modelling and tidy data
-		├── mini-project-2.Rmd   # Rmd file for milestone 2
-		├── mini-project-2.md    # Knitted md file for milestone 1
-		├── mini-project-2_files # output plots of each code chunk
-				├── figure-gfm
-        	├── XXX.png
-          ....
+│   ├── mini-project-2.Rmd   # Rmd file for milestone 2
+│   ├── mini-project-2.md    # Knitted md file for milestone 1
+│   ├── mini-project-2_files # output plots of each code chunk
+│   │   ├── figure-gfm
+│   │   │   ├── XXX.png
+          			....
 ├── Output                   # Output directory for csv file and rds file
-		├── XXX.csv
-		├── XXX.rds
+│   ├── XXX.csv
+│   ├── XXX.rds
 		
 ```
 
